@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+  <h2> what can javascript do</h2>
+  <p id="demo"> java script can change the style of html</p>
+  <h3 id="name" style="display: none;">SHAIK.SURAJBABA</h3>
+  <p id="match"></p>
+  <button  onclick="matching()"> matching</button>
+  <p id="rep"> my office is google</p>
+  <button onclick="replacea()"> replace</button>
+  <img style="width: 300px; height: 300px;"  id="bike" src="bike1.jpg" alt="">
+  <button  type="button" onclick="backgroundchange(1)"> bike1</button>
+  <button  type="button" onclick="backgroundchange(0)"> bike2</button>
+  <p id="person"></p>
+  <div>
+    <p id="length"></p>
+  </div>
+
+
+  <script>
+    / length of string/
+    var x="shaiksurajbaba";
+    document.getElementById("length").innerHTML=x.length;
+
+    / object creation/
+    const person={firstName:"suraj",lastname:"shaik", age:20,eyecolor:"black"} 
+    document.getElementById("person").innerHTML=person.firstName + "is" + person.age + "years old";
+/ backgroundimageChange/ 
+    function backgroundchange( value){
+      var pic;
+      if(value==1){
+        pic="bike1.jpg";
+      }else{
+        pic="bike2.jpg"
+      }
+      document.getElementById("bike").src=pic;
+    }
+/ String Matching/ 
+
+    function matching(){
+      var str = "The rain in SPAIN stays mainly in the plain"; 
+      var res=str.match(/ain/g);
+      document.getElementById("match").innerHTML=res;
+    }
+    / replace/ 
+    function replacea(){
+      let text=document.getElementById("rep").innerHTML;
+      document.getElementById("rep").innerHTML=text.replace("google","microsoft");
+      
+    }
+    /Concatination/ 
+    function fun(name,job){
+      document.getElementById("hi").innerHTML="welcome " 
+      +name+" , the "+ job;
+    }
+    /first program/ 
+    function myfunction(){
+      document.getElementById('demo').style.fontSize="25px";
+      document.getElementById("demo").style.textTransform="Uppercase";
+      document.getElementById("demo").style.backgroundColor="red";
+      document.getElementById("demo").style.color="yellow";
+      document.getElementById("demo").style.textAlign="center";
+      document.getElementById("demo").style.color="yellow";
+      document.getElementById("demo").style.border="2px solid black";
+      document.getElementById("demo").style.borderRadius="10px";
+    }
+    
+    function hide(){
+      document.getElementById("name").style.display="block"
+    }
+    function show(){
+      document.getElementById("name").style.display="block" ;
+      document.getElementById("name").style.color="pink";
+      d
+      ocument.getElementById("name").style.textAlign="center";
+      document.getElementById("name").style.backgroundColor='black';
+    }
+    function paragraph(){
+      document.getElementById("demo").innerHTML="hello world";
+    }
+    function light(s){
+      var pic;
+      if (s==0){
+        pic="pic_bulboff.gif";
+      }else{
+        pic="pic_bulbon.gif";
+      }
+      document.getElementById("bulb").src=pic;
+    }
+  </script>
+  <img id="bulb" src="pic_bulboff.gif"  width="100" height="180" alt="bulb">
+  <button type="button" onclick="hide()"> click me!</button>
+  <button type="button" onclick="fun('HarryPotter','wizard')"> try it!</button>
+  <p id="hi"></p>
+  <p id="hii"></p>
+
+  <button type="button" onclick="this.innerHTML=Date()"> the time is?</button> <br><br>
+  <p>
+    <button type="button" onclick="light(1)"> bulbon</button>
+    <button type="button" onclick="light(0)"> bulboff</button>
+  </p> 
+</body>
+</html>
